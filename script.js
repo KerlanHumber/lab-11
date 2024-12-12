@@ -18,3 +18,11 @@ class ProductProperties {
 const appleProduct = new ProductProperties("Apple", 2.50, 50);
 console.log(appleProduct.toString());
 console.log(appleProduct.getTotalValue());
+
+// Subclass
+class PerishableProductProperties extends ProductProperties {
+    constructor(name, price, quantity, expriationDate) {
+        super(name, price, quantity);
+        this.expriationDate = expriationDate;
+    }
+}
