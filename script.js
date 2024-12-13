@@ -1,3 +1,4 @@
+// Creating the base class
 class ProductProperties {
     constructor(name, price, quantity){
         this.name = name;
