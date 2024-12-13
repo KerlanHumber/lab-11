@@ -76,3 +76,6 @@ const products = [
     new PerishableProduct("Milk", 1.50, 10, "2024-12-31"),
     new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25")
 ];
+
+// Apply the 10% discount
+Product.applyDiscount(products, 0.1);
