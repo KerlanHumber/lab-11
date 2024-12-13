@@ -85,3 +85,21 @@ Product.applyDiscount(products, 0.1);
 for (const product of products) {
     console.log(product.toString());
 }
+
+class Store {
+    constructor() {
+        this.inventory = [];
+    }
+
+    addProduct(product) {
+        this.inventory.push(product);
+    }
+
+    getInventoryValue() {
+        return this.inventory.reduce((total, product) => total + product.getTotalValue(), 0);
+    }
+
+    findProductByName(name){
+        return this.inventory.find(product => product.name === name);
+    }
+}
