@@ -111,3 +111,6 @@ const myStore = new Store();
 myStore.addProduct(new Product("Apple", 2.50, 50));
 myStore.addProduct(new PerishableProduct("Milk", 1.50, 10, "2024-12-31"));
 myStore.addProduct(new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25"));
+
+// Get the total inventory value
+console.log("Total Inventory Value:", myStore.getInventoryValue());
