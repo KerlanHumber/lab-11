@@ -20,7 +20,7 @@ const appleProduct = new ProductProperties("Apple", 2.50, 50);
 console.log(appleProduct.toString());
 console.log(appleProduct.getTotalValue());
 
-// Subclass
+// Creating the subclass
 class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expriationDate) {
         super(name, price, quantity);
@@ -39,6 +39,7 @@ const yogurtProduct = new PerishableProductProperties("Yogurt", 2.00, 15, "2024-
 console.log(milkProduct.toString());
 console.log(yogurtProduct.toString());
 
+// Creating the static methods
 class Product {
     constructor(name, price, quantity) {
         this.name = name;
