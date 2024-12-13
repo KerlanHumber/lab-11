@@ -71,21 +71,6 @@ class PerishableProduct extends Product {
     }
 }
 
-// Create product instances
-const products = [
-    new Product("Apple", 2.50, 50),
-    new PerishableProduct("Milk", 1.50, 10, "2024-12-31"),
-    new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25")
-];
-
-// Apply a 10% discount
-Product.applyDiscount(products, 0.1);
-
-// Print the updated product information
-for (const product of products) {
-    console.log(product.toString());
-}
-
 class Store {
     constructor() {
         this.inventory = [];
@@ -104,21 +89,33 @@ class Store {
     }
 }
 
-// Create a store instance
+// Create products
+const products = [
+    new Product("Laptop", 800, 10),
+    new Product("Phone", 500, 20),
+    new PerishableProduct("Milk", 2, 50, "2025-01-01"),
+    new PerishableProduct("Bread", 1.5, 30, "2024-12-25"),
+    new Product("Book", 10, 100),
+];
+
+// Create a store and add products
 const myStore = new Store();
+products.forEach(product => myStore.addProduct(product));
 
-// Add products to the inventory
-myStore.addProduct(new Product("Apple", 2.50, 50));
-myStore.addProduct(new PerishableProduct("Milk", 1.50, 10, "2024-12-31"));
-myStore.addProduct(new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25"));
+// Print initial inventory value
+console.log("Initial Inventory Value" , myStore.getInventoryValue());
 
-// Get the total inventory value
-console.log("Total Inventory Value:", myStore.getInventoryValue());
+// Apply a 15% discount
+Product.applyDiscount(products, 0.15);
 
-// Find a product by name
+// Print inventory value after discount
+console.log("Inventory Value after 15% discount:" , myStore.getInventoryValue());
+
+// Find and print details of a specific product 
 const foundProduct = myStore.findProductByName("Milk");
 if (foundProduct) {
     console.log("Found Product:", foundProduct.toString());
 } else {
     console.log("Product not found.");
 }
+
