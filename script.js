@@ -39,43 +39,49 @@ console.log(milkProduct.toString());
 console.log(yogurtProduct.toString());
 
 class Product {
-    constrictor(name, price, quantity){
+    constructor(name, price, quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    getTotalValue(){
+    getTotalValue() {
         return this.price * this.quantity;
     }
 
-    toString(){
-        return `Products:${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
+    toString() {
+        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 
-    static applyDiscount(products, discount){
-        for (const product of products){
+    static applyDiscount(products, discount) {
+        for (const product of products) {
             product.price *= (1 - discount);
         }
     }
 }
 
 class PerishableProduct extends Product {
-    constrictorconstructor(name, price, quantity, expriationDate) {
+    constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity);
-        this.expriationDate = expriationDate;
+        this.expirationDate = expirationDate;
     }
-    toString(){
-        return `${super.toString()}, Expiration Date: ${this.expriationDate}`;
+
+    toString() {
+        return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
     }
 }
 
-// Product instances
+// Create product instances
 const products = [
     new Product("Apple", 2.50, 50),
     new PerishableProduct("Milk", 1.50, 10, "2024-12-31"),
     new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25")
 ];
 
-// Apply the 10% discount
+// Apply a 10% discount
 Product.applyDiscount(products, 0.1);
+
+// Print the updated product information
+for (const product of products) {
+    console.log(product.toString());
+}
