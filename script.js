@@ -103,3 +103,6 @@ class Store {
         return this.inventory.find(product => product.name === name);
     }
 }
+
+// Create a store instance
+const myStore = new Store();
