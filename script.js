@@ -37,3 +37,25 @@ const yogurtProduct = new PerishableProductProperties("Yogurt", 2.00, 15, "2024-
 
 console.log(milkProduct.toString());
 console.log(yogurtProduct.toString());
+
+class Product {
+    constrictor(name, price, quantity){
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    getTotalValue(){
+        return this.price * this.quantity;
+    }
+
+    toString(){
+        return `Products:${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
+    }
+
+    static applyDiscount(products, discount){
+        for (const product of products){
+            product.price *= (1 - discount);
+        }
+    }
+}
