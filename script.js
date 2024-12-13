@@ -114,3 +114,11 @@ myStore.addProduct(new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25"));
 
 // Get the total inventory value
 console.log("Total Inventory Value:", myStore.getInventoryValue());
+
+// Find a product by name
+const foundProduct = myStore.findProductByName("Milk");
+if (foundProduct) {
+    console.log("Found Product:", foundProduct.toString());
+} else {
+    console.log("Product not found.");
+}
