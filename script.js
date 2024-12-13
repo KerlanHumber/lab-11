@@ -69,3 +69,10 @@ class PerishableProduct extends Product {
         return `${super.toString()}, Expiration Date: ${this.expriationDate}`;
     }
 }
+
+// Product instances
+const products = [
+    new Product("Apple", 2.50, 50),
+    new PerishableProduct("Milk", 1.50, 10, "2024-12-31"),
+    new PerishableProduct("Yogurt", 2.00, 15, "2024-12-25")
+];
