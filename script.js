@@ -59,3 +59,13 @@ class Product {
         }
     }
 }
+
+class PerishableProduct extends Product {
+    constrictorconstructor(name, price, quantity, expriationDate) {
+        super(name, price, quantity);
+        this.expriationDate = expriationDate;
+    }
+    toString(){
+        return `${super.toString()}, Expiration Date: ${this.expriationDate}`;
+    }
+}
